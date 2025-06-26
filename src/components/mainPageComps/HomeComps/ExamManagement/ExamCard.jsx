@@ -40,21 +40,21 @@ const ExamCard = ({
         />
       )}
       <h3 className="exam-management__cardTitle">
-        {isOverlay && editingField === "title" ? (
+        {isOverlay && editingField === "examName" ? (
           <input
             type="text"
-            value={exam.title}
-            onChange={(e) => onFieldChange("title", e.target.value)}
+            value={exam.examName}
+            onChange={(e) => onFieldChange("examName", e.target.value)}
             autoFocus
             className="exam-management__title-input"
           />
         ) : (
           <span>
-            {exam.title}
+            {exam.examName}
             {isOverlay && (
               <MdOutlineModeEdit
                 className="edit-icon"
-                onClick={() => setEditingField("title")}
+                onClick={() => setEditingField("examName")}
               />
             )}
           </span>
@@ -65,15 +65,15 @@ const ExamCard = ({
           {!isOverlay && (
             <h3 className="exam-management__detail">
               وضعیت
-              <span>{exam.status}</span>
+              <span>{exam.examStatusRef}</span>
             </h3>
           )}
           <h3 className="exam-management__detail">
             مجری
-            {isOverlay && editingField === "organizer" ? (
+            {isOverlay && editingField === "examOrganizerRef" ? (
               <select
-                value={exam.organizer}
-                onChange={(e) => onFieldChange("organizer", e.target.value)}
+                value={exam.examOrganizerRef}
+                onChange={(e) => onFieldChange("examOrganizerRef", e.target.value)}
                 autoFocus
               >
                 <option value="سازمان سنجش">
@@ -87,11 +87,11 @@ const ExamCard = ({
               </select>
             ) : (
               <span>
-                {exam.organizer}
+                {exam.examOrganizerRef}
                 {isOverlay && (
                   <MdOutlineModeEdit
                     className="edit-icon"
-                    onClick={() => setEditingField("organizer")}
+                    onClick={() => setEditingField("examOrganizerRef")}
                   />
                 )}
               </span>
@@ -103,11 +103,11 @@ const ExamCard = ({
           <div className="exam-management__Register">
             <h3 className="exam-management__detail">
               تاریخ شروع ثبت‌نام
-              {isOverlay && editingField === "startDate" ? (
+              {isOverlay && editingField === "examRegisterStartDate" ? (
                 <DatePicker
-                  value={exam.startDate}
+                  value={exam.examRegisterStartDate}
                   onChange={(date) =>
-                    onFieldChange("startDate", date.format("YYYY/MM/DD"))
+                    onFieldChange("examRegisterStartDate", date.format("YYYY/MM/DD"))
                   }
                   calendar={persian}
                   locale={persian_fa}
@@ -116,11 +116,11 @@ const ExamCard = ({
                 />
               ) : (
                 <span>
-                  {exam.startDate}
+                  {exam.examRegisterStartDate}
                   {isOverlay && (
                     <MdOutlineModeEdit
                       className="edit-icon"
-                      onClick={() => setEditingField("startDate")}
+                      onClick={() => setEditingField("examRegisterStartDate")}
                     />
                   )}
                 </span>
@@ -128,11 +128,11 @@ const ExamCard = ({
             </h3>
             <h3 className="exam-management__detail">
               تاریخ پایان ثبت‌نام
-              {isOverlay && editingField === "endDate" ? (
+              {isOverlay && editingField === "examRegisterEndDate" ? (
                 <DatePicker
-                  value={exam.endDate}
+                  value={exam.examRegisterEndDate}
                   onChange={(date) =>
-                    onFieldChange("endDate", date.format("YYYY/MM/DD"))
+                    onFieldChange("examRegisterEndDate", date.format("YYYY/MM/DD"))
                   }
                   calendar={persian}
                   locale={persian_fa}
@@ -141,11 +141,11 @@ const ExamCard = ({
                 />
               ) : (
                 <span>
-                  {exam.endDate}
+                  {exam.examRegisterEndDate}
                   {isOverlay && (
                     <MdOutlineModeEdit
                       className="edit-icon"
-                      onClick={() => setEditingField("endDate")}
+                      onClick={() => setEditingField("examRegisterEndDate")}
                     />
                   )}
                 </span>
@@ -153,11 +153,11 @@ const ExamCard = ({
             </h3>
             <h3 className="exam-management__detail Renewal">
               تاریخ تمدید
-              {isOverlay && editingField === "extensionDate" ? (
+              {isOverlay && editingField === "examRenewalDate" ? (
                 <DatePicker
-                  value={exam.extensionDate}
+                  value={exam.examRenewalDate}
                   onChange={(date) =>
-                    onFieldChange("extensionDate", date.format("YYYY/MM/DD"))
+                    onFieldChange("examRenewalDate", date.format("YYYY/MM/DD"))
                   }
                   calendar={persian}
                   locale={persian_fa}
@@ -166,11 +166,11 @@ const ExamCard = ({
                 />
               ) : (
                 <span>
-                  {exam.extensionDate}
+                  {exam.examRenewalDate}
                   {isOverlay && (
                     <MdOutlineModeEdit
                       className="edit-icon"
-                      onClick={() => setEditingField("extensionDate")}
+                      onClick={() => setEditingField("examRenewalDate")}
                     />
                   )}
                 </span>
@@ -230,11 +230,11 @@ const ExamCard = ({
             </h3>
             <h3 className="exam-management__detail receiveDate">
               تاریخ دریافت کارت
-              {isOverlay && editingField === "cardReceiptDate" ? (
+              {isOverlay && editingField === "examWithdrawCard" ? (
                 <DatePicker
-                  value={exam.cardReceiptDate}
+                  value={exam.examWithdrawCard}
                   onChange={(date) =>
-                    onFieldChange("cardReceiptDate", date.format("YYYY/MM/DD"))
+                    onFieldChange("examWithdrawCard", date.format("YYYY/MM/DD"))
                   }
                   calendar={persian}
                   locale={persian_fa}
@@ -243,11 +243,11 @@ const ExamCard = ({
                 />
               ) : (
                 <span>
-                  {exam.cardReceiptDate}
+                  {exam.examWithdrawCard}
                   {isOverlay && (
                     <MdOutlineModeEdit
                       className="edit-icon"
-                      onClick={() => setEditingField("cardReceiptDate")}
+                      onClick={() => setEditingField("examWithdrawCard")}
                     />
                   )}
                 </span>
@@ -257,11 +257,11 @@ const ExamCard = ({
 
           <p className="exam-management__detail examCost">
             هزینه:
-            {isOverlay && editingField === "cost" ? (
+            {isOverlay && editingField === "examPrice" ? (
               <div className="exam-management__cost-wrapper">
                 <input
                   type="text"
-                  value={exam.cost}
+                  value={exam.examPrice}
                   onChange={(e) => onCostChange(exam.id, e.target.value)}
                   onBlur={() => setEditingField(null)}
                   autoFocus
@@ -271,11 +271,11 @@ const ExamCard = ({
               </div>
             ) : (
               <span>
-                {formatCost(exam.cost)} ریال
+                {formatCost(exam.examPrice)} ریال
                 {isOverlay && (
                   <MdOutlineModeEdit
                     className="edit-icon"
-                    onClick={() => setEditingField("cost")}
+                    onClick={() => setEditingField("examPrice")}
                   />
                 )}
               </span>

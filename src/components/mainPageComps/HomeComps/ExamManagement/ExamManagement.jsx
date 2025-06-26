@@ -10,12 +10,12 @@ import { useAuth } from "../../../../AuthContext";
 import { persianToLatinDigits } from "../../../../utils/persianToLatinDigits";
 import { getHandler } from "../../../../apiService";
 
-
-
 const ExamManagement = () => {
-  let apiExam = getHandler("exam");
+  const [exams, setExams] = useState([]);
+  getHandler("exam").then((res) => {
+    setExams(res);
+  });
   const { user } = useAuth();
-  const [exams, setExams] = useState(apiExam);
   const [originalExams, setOriginalExams] = useState(null);
   const [selectedExamId, setSelectedExamId] = useState(null);
   const [editingField, setEditingField] = useState(null);
