@@ -257,6 +257,40 @@ export const getHandler = async (tableName) => {
   }
 };
 
+export const updateHandler = async (tableName, id, data) => {
+  try {
+    const response = await api.put(`/${tableName}/${id}`, data);
+    //console.log`updateHandler response for ${tableName}:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating ${tableName}:`, error);
+    throw new Error(`خطا در به‌روزرسانی جدول ${tableName}: ${error.message}`);
+  }
+};
+
+export const addHandler = async (tableName, data) => {
+  try {
+    const response = await api.post(`/${tableName}`, data);
+    //console.log`updateHandler response for ${tableName}:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error updating ${tableName}:`, error);
+    throw new Error(`خطا در به‌روزرسانی جدول ${tableName}: ${error.message}`);
+  }
+};
+
+export const deleteHandler = async (tableName, id) => {
+  try {
+    const response = await api.delete(`/${tableName}/${id}`);
+    //console.log`deleteHandler response for ${tableName}:`, response.data);
+    return response.data;
+  } catch (error) {
+    console.error(`Error deleting from ${tableName}:`, error);
+    throw new Error(`خطا در حذف از جدول ${tableName}: ${error.message}`);
+  }
+};
+
+
 export const getbyIDHandler = async (tableName, specID) => {
   try {
     const response = await api.get("/" + tableName + "/" + specID);
