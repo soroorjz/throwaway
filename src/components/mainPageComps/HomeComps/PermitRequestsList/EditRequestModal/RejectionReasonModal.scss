@@ -1,0 +1,65 @@
+.rejection-reason-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rejection-reason-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+}
+
+.rejection-reason-modal__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #04364a;
+}
+
+.rejection-reason-modal__reason {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 24px;
+  line-height: 1.6;
+  text-align: center;
+  font-weight: 400 !important;
+}
+
+.rejection-reason-modal__actions {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.rejection-reason-modal__btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  background-color: #04364a;
+  color: #ffffff;
+  border: none;
+  &:nth-child(2) {
+    background-color: #e55604;
+    color: #fff;
+     &:hover {
+    background-color: #e53504;
+  }
+  }
+  &:hover {
+    background-color: #032736;
+  }
+}

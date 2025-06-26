@@ -1,0 +1,26 @@
+.exam-tabs {
+  display: flex;
+  gap: 5px;
+  // background: #f1f4f6;
+  width: 100%;
+  margin-bottom: 25px;
+}
+
+.exam-tab {
+  padding: 8px 16px;
+  border: none;
+  background: #fff;
+  cursor: pointer;
+  border-radius: 5px 5px 0 0;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.exam-tab:hover {
+  background: #f0f0f0;
+}
+
+.exam-tab.active {
+  background: #578e7e;
+  color: #fff;
+}

@@ -1,0 +1,304 @@
+.required-docs-modal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+  }
+
+  &__content {
+    background: #fff;
+    border-radius: 8px;
+    width: 600px;
+    max-width: 90%;
+    padding: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+        position: relative;
+    max-height: 80vh;
+    overflow: auto;
+  }
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e5e7eb;
+    padding-bottom: 10px;
+  }
+
+  &__title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #1f2937;
+  }
+
+  &__close-button {
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    color: #6b7280;
+    transition: color 0.2s;
+
+    &:hover {
+      color: #1f2937;
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__documents-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 15px;
+        align-items: center;
+  }
+
+  &__document-item {
+    border: 1px solid #e5e7eb;
+    padding: 12px;
+    border-radius: 6px;
+    background: #f9fafb;
+        width: 100%;
+  }
+
+  &__title-mandatory {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  &__form-group {
+    display: flex;
+    // flex-direction: column;
+    gap: 5px;
+    flex: 1;
+    &.docsDate{
+    flex-direction: column;
+        align-items: center;
+    }
+  }
+
+  &__label {
+    font-size: 14px;
+    font-weight: 500;
+    color: #374151;
+  }
+
+  &__input,
+  &__textarea {
+    padding: 8px 12px;
+    border: 1px solid #d1d5db;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #1f2937;
+    transition: border-color 0.2s;
+
+    &:focus {
+      outline: none;
+      border-color: #e55604;
+      box-shadow: 0 0 0 2px rgba(59, 130, 246, 0.2);
+    }
+  }
+  &__textarea{
+        width: 100%;
+  }
+
+  &__input {
+    height: 40px;
+  }
+
+  &__textarea {
+    height: 80px;
+    resize: none;
+  }
+
+  &__switch {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &__switch-label {
+    font-size: 14px;
+    color: #6b7280;
+
+    &--active {
+      color: #1f2937;
+      font-weight: 500;
+    }
+  }
+
+  &__switch-toggle {
+    position: relative;
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+  }
+
+  &__switch-toggle input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__switch-slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #d1d5db;
+    transition: 0.3s;
+    border-radius: 20px;
+
+    &:before {
+      position: absolute;
+      content: "";
+      height: 16px;
+      width: 16px;
+      left: 2px;
+      bottom: 2px;
+      background-color: #fff;
+      transition: 0.3s;
+      border-radius: 50%;
+    }
+  }
+
+  &__switch-toggle input:checked + &__switch-slider {
+    background-color: #e55604;
+  }
+
+  &__switch-toggle input:checked + &__switch-slider:before {
+    transform: translateX(20px);
+  }
+
+  &__add-button,
+  &__remove-button {
+    background-color: #e55604;
+    color: #fff;
+    border: none;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.2s;
+
+    &:hover {
+      background-color: #e54704;
+    }
+  }
+   &__add-button{
+    align-self: flex-end;
+   }
+
+  &__remove-button {
+    background-color: #dc3545;
+
+    &:hover {
+      background-color: #c82333;
+    }
+  }
+
+  &__deadline-picker {
+    display: flex;
+    justify-content: space-around;
+
+    .rmdp-container {
+      width: 40%;
+
+      input {
+        padding: 8px 12px;
+        border: 1px solid #d1d5db;
+      }
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    border-top: 1px solid #e5e7eb;
+    padding-top: 10px;
+  }
+
+  &__button {
+    padding: 8px 16px;
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+
+    &--submit {
+      background-color: #e55604;
+      color: #fff;
+      border: none;
+
+      &:hover {
+        background-color: #e54704;
+      }
+
+      &:disabled {
+        background-color: #e556047a;
+        cursor: not-allowed;
+      }
+    }
+
+    &--cancel {
+      background-color: #f3f4f6;
+      color: #1f2937;
+      border: none;
+
+      &:hover {
+        background-color: #e5e7eb;
+      }
+    }
+  }
+}
+
+.react-time-picker__inputGroup {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.react-time-picker__wrapper {
+  border-radius: 10px;
+  direction: rtl;
+}
+
+.required-docs-modal__time-picker {
+  input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    text-align: right;
+  }
+}
+
+.rmdp-input {
+  padding: 20px 12px !important;
+}

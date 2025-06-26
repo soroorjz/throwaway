@@ -1,0 +1,11 @@
+.homeCompContaine {
+  background-color: #f1f4f6;
+  width: 100%;
+  min-height: 100vh;
+  .homeBody {
+    width: 95%;
+    margin: 0 auto;
+    display: flex;
+    // overflow: hidden;
+  }
+}

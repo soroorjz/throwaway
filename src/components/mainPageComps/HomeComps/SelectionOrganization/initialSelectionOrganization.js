@@ -1,0 +1,40 @@
+export const initialSelectionOrganization = [
+  {
+    id: 1,
+    examName:
+      "آزمون به کارگیری نیرو در شرکت های طرف قرارداد شرکت برق منطقه‌ای اصفهان",
+    organization: "وزارت نیرو",
+    job: "اپراتور فوق توزیع",
+    group: "گروه الف",
+    venue: "مرکز همایش‌های تهران",
+    documents: "",
+    examDate: "1400/05/01",
+    examTime: "09:00",
+    candidateList: "/files/selection-org1.xlsx",
+  },
+  {
+    id: 2,
+    examName:
+      "آزمون استخدام نيروی پيمانی مشاغل عملياتی آتش‌نشانی شهرداری اصفهان",
+    organization: "سازمان شهرداری ها و دهیاری های کشور",
+    job: "آتشنشان",
+    group: "گروه ب",
+    venue: "سالن همایش‌های شهرداری",
+    documents: "",
+    examDate: "1404/02/10",
+    examTime: "08:00",
+    candidateList: "/files/selection-org3.xlsx",
+  },
+  {
+    id: 3,
+    examName: "اولین آزمون استخدامی اختصاصی معلولان",
+    organization: "سازمان بهزیستی کشور",
+    job: "کارشناس اداری",
+    group: "گروه الف",
+    venue: "دانشگاه آزاد کرج",
+    documents: "",
+    examDate: "1404/02/15",
+    examTime: "11:00",
+    candidateList: "/files/selection-org4.xlsx",
+  },
+];

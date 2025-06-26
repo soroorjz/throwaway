@@ -1,0 +1,129 @@
+.dynamic-list-skeleton {
+  padding: 20px;
+  background-color: #eef3f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  direction: rtl;
+
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__title {
+    width: 150px;
+    height: 24px;
+  }
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    align-items: center;
+  }
+
+  &__search {
+    width: 200px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  &__add-btn {
+    width: 100px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  &__table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  }
+
+  &__table-header {
+    background-color: #04364a;
+    color: white;
+    padding: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    text-align: center;
+  }
+
+  &__table-row {
+    border-bottom: 1px solid #e5e7eb;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__table-cell {
+    padding: 12px;
+    text-align: center;
+  }
+
+  &__table-actions {
+    display: flex;
+    gap: 8px;
+    justify-content: center;
+  }
+}
+
+// استایل‌های مربوط به placeholder و انیمیشن لودینگ
+.skeleton-box {
+  background: #e5e7eb;
+  position: relative;
+  overflow: hidden;
+
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.5) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    animation: shimmer 1.5s infinite;
+  }
+
+  &--small {
+    width: 30px;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  &--text {
+    width: 60%;
+    height: 20px;
+    margin: 0 auto;
+    border-radius: 4px;
+  }
+
+  &--icon {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

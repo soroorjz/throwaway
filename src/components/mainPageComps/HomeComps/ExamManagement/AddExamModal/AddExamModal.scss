@@ -1,0 +1,150 @@
+.add-exam-modal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    direction: rtl;
+  }
+
+  &__content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 60%;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    max-height: 80vh;
+
+    h3 {
+      font-size: 20px;
+      color: #1f2937;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(31%, 1fr));
+    gap: 20px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 500;
+  }
+
+  &__input,
+  &__select {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #f9fafb;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  &__select {
+    appearance: none;
+    background-position: left 10px center;
+    padding-left: 30px;
+  }
+
+  &__datepicker {
+    .rmdp-container {
+      width: 100%;
+    }
+    input {
+      padding: 10px;
+      border: 1px solid #d1d5db;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #1f2937;
+      background-color: #f9fafb;
+      width: 100%;
+      box-sizing: border-box;
+    }
+  }
+
+  &__time-picker {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  &__time-input {
+    padding: 10px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #f9fafb;
+    width: 60px;
+    text-align: center;
+  }
+
+  &__time-separator {
+    font-size: 16px;
+    color: #1f2937;
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+    grid-column: 1 / -1;
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  &__submit-btn,
+  &__cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  &__submit-btn {
+    background-color: #04364a;
+    color: white;
+
+    &:hover {
+      background-color: #032736;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__cancel-btn {
+    background-color: #e55604;
+    color: white;
+
+    &:hover {
+      background-color: #dc2626;
+      transform: translateY(-1px);
+    }
+  }
+}

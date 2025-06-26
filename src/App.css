@@ -1,0 +1,127 @@
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Black.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Black.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Bold.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Bold.ttf")
+    format("truetype");
+  font-weight: bold;
+  font-style: bold;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Thin.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Thin.ttf")
+    format("truetype");
+  font-weight: thin;
+  font-style: thin;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src:
+   /* url("/public/assets/fonts/Vazirmatn-Light.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-Light.ttf")
+    format("truetype");
+  font-weight: Light;
+  font-style: Light;
+}
+@font-face {
+  font-family: "Vazirmatn";
+  src: 
+  /* url("/public/assets/fonts/Vazirmatn-Medium.woff2") format("woff2"), */ url("/public/assets/fonts/font2/Vazirmatn-FD-Medium.ttf")
+    format("truetype");
+  font-weight: Medium;
+  font-style: Medium;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: Vazirmatn;
+  direction: rtl;
+}
+
+a {
+  text-decoration: none;
+}
+
+.loginSnackbar {
+  background-color: #04364a;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* استایل اسکرول‌بار برای مرورگرهای Webkit */
+::-webkit-scrollbar {
+  width: 14px; /* عرض بیشتر برای جا دادن فلش‌ها */
+  height: 14px; /* ارتفاع بیشتر برای اسکرول افقی */
+}
+
+::-webkit-scrollbar-track {
+  background: #e0e0e0; /* طوسی ملایم برای پس‌زمینه */
+  border-radius: 8px; /* گوشه‌های گرد */
+}
+
+::-webkit-scrollbar-thumb {
+  background: #04364a; /* رنگ اصلی اسکرول‌بار */
+  border-radius: 8px; /* گوشه‌های گرد */
+  position: relative;
+  /* شبیه‌سازی آیکون سه‌خط در وسط اسکرول‌بار */
+  background-image: linear-gradient(
+    transparent 40%,
+    white 40%,
+    white 45%,
+    transparent 45%,
+    transparent 50%,
+    white 50%,
+    white 55%,
+    transparent 55%,
+    transparent 60%,
+    white 60%,
+    white 65%,
+    transparent 65%
+  );
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  transition: background-color 0.3s ease; /* انیمیشن نرم */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #055c74; /* رنگ روشن‌تر برای هاور */
+}
+
+/* شبیه‌سازی فلش‌های بالا و پایین */
+::-webkit-scrollbar-button {
+  display: block;
+  height: 14px;
+  background: #04364a;
+  position: relative;
+}
+
+/* فلش بالا */
+::-webkit-scrollbar-button:vertical:decrement {
+  background: #04364a url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='white' viewBox='0 0 24 24'><path d='M12 8l-6 6h12l-6-6z'/></svg>")
+    center center no-repeat;
+}
+
+/* فلش پایین */
+::-webkit-scrollbar-button:vertical:increment {
+  background: #04364a url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='10' height='10' fill='white' viewBox='0 0 24 24'><path d='M12 16l6-6H6l6 6z'/></svg>")
+    center center no-repeat;
+}
+
+/* استایل برای فایرفاکس */
+html {
+  scrollbar-width: thin; /* عرض کم برای اسکرول‌بار */
+  scrollbar-color: #04364a #e0e0e0; /* رنگ اسکرول‌بار و پس‌زمینه */
+}

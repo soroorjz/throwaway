@@ -1,0 +1,53 @@
+.stimulsoft-viewer-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(31, 41, 55, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+
+  &__content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    width: 90%;
+    max-width: 1200px;
+    height: 85vh;
+    position: relative;
+    overflow: hidden;
+  }
+
+  &__viewer {
+    width: 100%;
+    // height: calc(100% - 50px);
+    overflow: auto;
+  }
+
+  &__close-btn {
+    position: absolute;
+    bottom: 10px;
+    left: 30px;
+    padding: 8px 16px;
+    background-color: #04364a;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    z-index: 10000;
+    &:hover {
+      background-color: #041d26;
+    }
+  }
+}
+#stimulsoftViewerReportPanel {
+  padding-bottom: 20px !important;
+}
+
+

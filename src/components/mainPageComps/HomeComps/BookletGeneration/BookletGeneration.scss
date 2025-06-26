@@ -1,0 +1,94 @@
+.booklet-generation {
+  padding: 20px;
+  background-color: #eef3f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &__title {
+    font-size: 20px;
+    color: #1f2937;
+    margin-bottom: 20px;
+    text-align: right;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(25%, 0fr));
+    gap: 20px;
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    min-height: 200px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+    justify-content: space-around;
+    // max-width: 30%;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
+  }
+
+  &__card-title {
+    font-size: 16px;
+    background-color: rgba(87, 142, 126, 0.231);
+    padding: 10px;
+    border-radius: 40px;
+
+    color: #04364a;
+    width: fit-content;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    width: 80%;
+  }
+
+  &__generate-btn,
+  &__publish-btn {
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    flex: 1;
+  }
+
+  &__generate-btn {
+    background-color: #04364a;
+
+    &:hover {
+      background-color: #041d26;
+    }
+  }
+
+  &__publish-btn {
+    background-color: #e55604;
+
+    &:hover {
+      background-color: #e53c04;
+    }
+  }
+
+  &__no-exams {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-top: 20px;
+  }
+}

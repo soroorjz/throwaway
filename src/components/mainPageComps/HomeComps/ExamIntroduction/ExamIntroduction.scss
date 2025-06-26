@@ -1,0 +1,249 @@
+.examIntro-selector-container {
+  background-color: #eef3f2;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  gap: 10px;
+  padding: 20px;
+}
+
+.examIntro-select-wrapper {
+  margin-bottom: 1.5rem;
+}
+
+.examIntro-select-label {
+  display: block;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+}
+
+.examIntro-select {
+  width: 25%;
+  padding: 0.75rem;
+  font-size: 14px;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.examIntro-select:focus {
+  border-color: #e55604;
+}
+
+.examIntro-textarea {
+  width: 100%;
+  min-height: 250px;
+  padding: 0.75rem;
+  font-size: 1rem;
+  color: #374151;
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  resize: vertical;
+  outline: none;
+  transition: border-color 0.2s ease-in-out;
+}
+
+.examIntro-textarea:focus {
+  border-color: #e55604;
+  box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.examIntro-textarea::placeholder {
+  color: #9ca3af;
+}
+
+.examIntro-PublishBtn {
+  padding: 8px 16px;
+  background-color: #04364a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s;
+  width: 10%;
+  align-self: flex-end;
+}
+
+.examIntro-PublishBtn:disabled {
+  background-color: #6b7280;
+  cursor: not-allowed;
+}
+
+.examIntro-PublishBtn:hover:not(:disabled) {
+  background-color: #e55604;
+}
+
+.examIntro-cards-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-top: 20px;
+}
+
+.examIntro-card {
+  background-color: #ffffff;
+  border: 1px solid #d1d5db;
+  border-radius: 8px;
+  padding: 1rem;
+  width: 300px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.examIntro-card h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 0.5rem;
+  text-align: center;
+}
+
+.examIntro-card-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.examIntro-card-button {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.examIntro-card-button.edit {
+  background-color: #04364a;
+  color: white;
+}
+
+.examIntro-card-button.edit:hover {
+  background-color: #04222e;
+}
+
+.examIntro-card-button.delete {
+  background-color: #e55604;
+  color: white;
+}
+
+.examIntro-card-button.delete:hover {
+  background-color: #e53c04;
+}
+
+.examIntro-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.examIntro-modal-content {
+  background-color: #ffffff;
+  padding: 1.5rem;
+  border-radius: 8px;
+  text-align: center;
+  width: 90%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.examIntro-modal-content h3 {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #1f2937;
+  margin-bottom: 1rem;
+}
+
+.examIntro-modal-content p {
+  font-size: 1rem;
+  color: #1f2937;
+  margin-bottom: 1.5rem;
+}
+
+.examIntro-modal-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  width: 60%;
+  margin: 0 auto;
+  margin: 15px auto 0;
+}
+
+.examIntro-modal-confirm {
+  padding: 8px 16px;
+  background-color: #04364a;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+}
+
+.examIntro-modal-confirm:hover {
+  background-color: #04222e;
+}
+
+.examIntro-modal-cancel {
+  padding: 8px 16px;
+  background-color: #e55604;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  width: 50%;
+}
+
+.examIntro-modal-cancel:hover {
+  background-color: #e53c04;
+}
+
+.examIntro-success {
+  background-color: #ffffff;
+  border-radius: 8px;
+  font-size: 20px;
+  font-weight: 500;
+  width: 30%;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  flex-direction: column;
+  color: #04364a;
+}
+
+.examIntro-successIcon {
+  color: #e55604;
+  font-size: 50px;
+}

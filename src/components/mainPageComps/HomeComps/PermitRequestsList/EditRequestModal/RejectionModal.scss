@@ -1,0 +1,85 @@
+.rejection-modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.rejection-modal {
+  background: white;
+  border-radius: 8px;
+  padding: 24px;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  direction: rtl;
+}
+
+.rejection-modal__title {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 16px;
+  color: #04364a;
+  text-align: center;
+}
+
+.rejection-modal__description {
+  font-size: 1rem;
+  color: #666;
+  margin-bottom: 16px;
+}
+
+.rejection-modal__textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 12px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  resize: vertical;
+  font-size: 1rem;
+  margin-bottom: 16px;
+  &:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  }
+}
+
+.rejection-modal__actions {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+
+.rejection-modal__btn {
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.rejection-modal__btn--cancel {
+  background: #e55604;
+  color: white;
+  border: none;
+  &:hover {
+    background: #e53c04;
+  }
+}
+
+.rejection-modal__btn--submit {
+  background-color: #04364a;
+  color: #ffffff;
+  border: none;
+
+  &:hover {
+    background-color: #032736;
+  }
+}

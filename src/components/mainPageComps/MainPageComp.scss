@@ -1,0 +1,259 @@
+.main-page {
+  width: 100%;
+  background: #f1f4f6;
+  height: fit-content;
+  // position: sticky;
+  // top: 0px;
+
+  .category-Content {
+    width: 95%;
+    margin: 20px auto;
+  }
+}
+
+.breadcrumbs_container {
+  display: flex;
+  width: 92%;
+  margin: 0 auto;
+  align-items: center;
+
+  .breadcrumbs {
+    width: 95%;
+    margin: 10px auto;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #6b7280;
+
+    &__item {
+      color: #374151;
+      font-weight: 500;
+      cursor: pointer;
+
+      &:first-child {
+        color: #e55604cf;
+        cursor: pointer;
+      }
+    }
+
+    &__separator {
+      color: #9ca3af;
+    }
+  }
+
+  .back-button {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 6px;
+    padding: 8px 12px;
+    background-color: #04364a;
+    color: #ffffff;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: background-color 0.2s, transform 0.2s;
+
+    &:hover {
+      background-color: #03222e;
+      transform: scale(1.02);
+    }
+
+    &.disabled {
+      background-color: #e5e7eb;
+      color: #9ca3af;
+      transform: none;
+    }
+
+    svg {
+      font-size: 14px;
+      transform: rotate(180deg);
+    }
+  }
+}
+
+.category-Content {
+  position: relative;
+}
+
+.add-button {
+  background-color: #e55604;
+  color: white;
+  border: none;
+  padding: 8px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.3s;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+
+  svg {
+    margin-top: 3px;
+  }
+
+  &:hover {
+    background-color: #cf4f05;
+  }
+}
+
+.modal,
+.DynamicListModal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  direction: rtl;
+
+  .modal-content {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    width: 90%;
+    min-width: 300px; /* حداقل عرض برای جلوگیری از کوچک شدن بیش از حد */
+    max-width: 600px; /* حداکثر عرض مودال */
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+
+    h2 {
+      margin: 0;
+      font-size: 1.5rem;
+      text-align: center;
+    }
+
+    form {
+      display: flex;
+      flex-wrap: wrap; /* اینپوت‌ها در صورت نیاز به خط بعدی منتقل بشن */
+      gap: 16px 20px;
+    }
+  }
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  flex: 1 1 250px; /* عرض پایه برای هر اینپوت */
+  max-width: 100%; /* جلوگیری از بیرون زدن */
+
+  label {
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: right;
+  }
+
+  input {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+    width: 100%;
+    box-sizing: border-box;
+  }
+}
+
+.modal-actions {
+  grid-column: 1 / -1;
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+.modal-actions button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  min-width: 100px;
+}
+
+.modal-actions button[type="submit"] {
+  background-color: #04364a;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #032736;
+  }
+}
+
+.modal-actions button[type="button"] {
+  background-color: #e55604;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #d14303;
+  }
+}
+
+.warning-modal .modal-content {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: center;
+  max-width: 400px;
+}
+
+.warning-modal h2 {
+  color: #d32f2f;
+  margin-bottom: 15px;
+}
+
+.warning-modal p {
+  margin-bottom: 20px;
+}
+
+.warning-modal .modal-actions {
+  display: flex;
+  justify-content: center;
+}
+
+.warning-modal button {
+  padding: 10px 20px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.warning-modal button:first-child {
+  background-color: #04364a;
+  color: white;
+  border: none;
+
+  &:hover {
+    background-color: #032736;
+  }
+}
+
+.warning-modal button:last-child {
+  background-color: #e55604;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #d14303;
+  }
+}
+
+.chatPopUpBtn{
+  position: fixed;
+  left: 40px;
+  bottom: 35px;
+  padding: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+}

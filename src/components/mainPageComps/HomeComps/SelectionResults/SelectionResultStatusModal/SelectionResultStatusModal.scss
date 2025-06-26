@@ -1,0 +1,163 @@
+.selection-result-status-modal {
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    direction: rtl;
+  }
+
+  &__content {
+    background-color: #ffffff;
+    border-radius: 12px;
+    padding: 24px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+    overflow-y: auto;
+    font-family: "Vazir", Arial, sans-serif;
+
+    h3 {
+      font-size: 20px;
+      color: #1f2937;
+      margin-bottom: 20px;
+      text-align: center;
+      font-weight: 600;
+    }
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  &__form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  &__label {
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 500;
+  }
+
+  &__switch-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 10px 16px;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 500;
+  }
+
+  &__switch-label {
+    font-size: 14px;
+    color: #1f2937;
+    font-weight: 500;
+
+    &--approve {
+      color: #e55604;
+    }
+
+    &--reject {
+      color: #1f2937;
+    }
+  }
+
+  &__switch {
+    position: relative;
+    display: inline-block;
+    width: 52px;
+    height: 28px;
+    direction: ltr;
+  }
+
+  &__switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &__slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #9ca3af;
+    transition: background-color 0.4s;
+    border-radius: 34px;
+  }
+
+  &__slider:before {
+    position: absolute;
+    content: "";
+    height: 22px;
+    width: 22px;
+    left: 3px;
+    bottom: 3px;
+    background-color: white;
+    transition: transform 0.4s;
+    border-radius: 50%;
+  }
+
+  &__switch input:checked + .selection-result-status-modal__slider {
+    background-color: #e55604;
+  }
+
+  &__switch input:checked + .selection-result-status-modal__slider:before {
+    transform: translateX(24px);
+  }
+
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 12px;
+    margin-top: 16px;
+  }
+
+  &__submit-btn,
+  &__cancel-btn {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+  }
+
+  &__submit-btn {
+    background-color: #04364a;
+    color: white;
+
+    &:hover {
+      background-color: #032736;
+      transform: translateY(-1px);
+    }
+  }
+
+  &__cancel-btn {
+    background-color: #e55604;
+    color: white;
+
+    &:hover {
+      background-color: #dc2626;
+      transform: translateY(-1px);
+    }
+  }
+}

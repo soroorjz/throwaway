@@ -1,0 +1,124 @@
+@import "../../../styles/responsive.scss";
+$tablet-resize: 900px;
+.login-container {
+  margin-top: 70px;
+  display: flex;
+  flex-direction: column-reverse;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f7f7f7;
+  width: 90%;
+  height: 80vh;
+  gap: 60px;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 50px;
+  @include responsive($tablet) {
+    flex-direction: row-reverse;
+    width: 95%;
+  }
+  @include responsive($tablet-resize) {
+    width: 70%;
+    margin: 70px auto 50px;
+  }
+  .login-left {
+    align-self: center;
+    flex: 1;
+    width: 100%;
+    @include responsive($tablet) {
+      width: 50%;
+    }
+
+    h1 {
+      font-size: 2rem;
+      text-align: center;
+      margin-bottom: 40px;
+      color: #04364a;
+    }
+
+    p {
+      font-size: 1rem;
+      margin-bottom: 20px;
+    }
+
+    .login-form {
+      display: flex;
+      flex-direction: column;
+      width: 80%;
+      margin: 0 auto;
+      gap: 20px;
+      .form-input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+      }
+
+      .form-options {
+        display: flex;
+        justify-content: flex-end;
+
+        .forgot-password {
+          font-size: 0.875rem;
+          color: #e55604;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+
+      .login-button {
+        width: 100%;
+        padding: 10px;
+        background-color: #04364a;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        margin-top: 60px;
+        &:hover {
+          background-color: #e55604;
+        }
+      }
+    }
+
+    .login-divider {
+      text-align: center;
+      margin: 20px 0;
+      font-size: 0.875rem;
+      color: #aaa;
+    }
+
+    .register-link {
+      text-align: center;
+      margin-top: 20px;
+
+      p {
+        font-size: 0.875rem;
+
+        a {
+          color: #e55604;
+          text-decoration: none;
+
+          &:hover {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+  }
+
+  .login-right {
+    flex: 1;
+    width: 100%;
+    @include responsive($tablet) {
+      width: 50%;
+    }
+    p {
+      margin-top: 20px;
+    }
+  }
+}

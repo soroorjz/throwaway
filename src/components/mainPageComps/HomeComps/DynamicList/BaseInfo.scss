@@ -1,0 +1,38 @@
+.base-info {
+    padding: 20px;
+    direction: rtl;
+  
+    &__title {
+      font-size: 24px;
+      color: #1f2937;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+  
+    &__sections {
+      display: flex;
+      gap: 15px;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+  
+    &__section-btn {
+      padding: 10px 20px;
+      background-color: #e5e7eb;
+      color: #1f2937;
+      border: none;
+      border-radius: 6px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+  
+      &:hover {
+        background-color: #d1d5db;
+      }
+  
+      &--active {
+        background-color: #04364a;
+        color: white;
+      }
+    }
+  }

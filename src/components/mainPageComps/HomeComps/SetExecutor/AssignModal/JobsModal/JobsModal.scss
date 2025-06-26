@@ -1,0 +1,94 @@
+.jobs-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1100;
+}
+
+.jobs-modal-container {
+  background-color: #fff;
+  border-radius: 12px;
+  width: 20%;
+  max-width: 500px;
+  min-height: fit-content;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+}
+
+.jobs-modal-header {
+  background-color: #04364a;
+  padding: 15px;
+  text-align: center;
+}
+
+.jobs-modal-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.jobs-modal-body {
+  flex: 1;
+  padding: 20px;
+  background-color: #f9f9f9;
+}
+
+.jobs-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+  text-align: center;
+}
+
+.job-item {
+  padding: 12px 15px;
+  font-size: 15px;
+  color: #444;
+  border-bottom: 1px solid #e0e0e0;
+  transition: background-color 0.3s;
+}
+
+.job-item:last-child {
+  border-bottom: none;
+}
+
+.job-item:hover {
+  background-color: #578e7e1a;
+}
+
+.jobs-modal-footer {
+  padding: 15px;
+  background-color: #f1f1f1;
+  text-align: center;
+}
+
+.jobs-modal-close-button {
+  background-color: #04364a;
+  color: white;
+  padding: 10px 24px;
+  border: none;
+  border-radius: 6px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.jobs-modal-close-button:hover {
+  background-color: #e55604;
+  transform: translateY(-2px);
+}
+
+.jobs-modal-close-button:active {
+  transform: translateY(0);
+}

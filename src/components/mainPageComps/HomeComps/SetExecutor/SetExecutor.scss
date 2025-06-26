@@ -1,0 +1,105 @@
+.set-executor-container {
+  width: 95%;
+  background-color: #eef3f2;
+  margin: 0 auto;
+}
+.set-executor-column-desc{
+  display: flex
+  ;
+      align-items: center;
+      justify-content: space-between;
+      width: 80%;
+}
+.set-executor-title {
+  font-size: 24px;
+  font-weight: bold;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #333;
+}
+
+.set-executor-desc {
+  font-size: 15px;
+  color: #555;
+  padding-bottom: 27px;
+  text-align: center;
+}
+
+.set-executor-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.set-executor-column {
+  padding: 16px;
+  border-radius: 8px;
+  &:nth-child(1) {
+    border-radius: 0 10px 10px 0;
+  }
+  &:nth-child(2) {
+    border-radius: 10px 0 0 10px;
+  }
+  background-color: #f9f9f9;
+}
+
+.set-executor-column-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  text-align: center;
+  color: #444;
+}
+
+.set-executor-exam-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  padding: 8px;
+  background-color: #fff;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.set-executor-exam-name {
+  font-size: 16px;
+  color: #555;
+  margin-right: 8px; /* فاصله بین نام آزمون و تاریخ */
+}
+
+.set-executor-exam-date {
+  font-size: 12px; /* اندازه فونت کوچک */
+  color: #888; /* رنگ کم‌رنگ برای تاریخ */
+  white-space: nowrap; /* جلوگیری از شکستن خط */
+  margin-right: 10px;
+}
+
+.set-executor-button-show {
+  background-color: #04364a;
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.set-executor-button-show:hover {
+  background-color: #e55604;
+}
+
+.set-executor-button-assign {
+  background-color: #578e7e;
+  color: white;
+  padding: 4px 12px;
+  border: none;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.set-executor-button-assign:hover {
+  background-color: #e55604;
+}

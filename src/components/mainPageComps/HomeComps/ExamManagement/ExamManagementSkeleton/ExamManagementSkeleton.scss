@@ -1,0 +1,161 @@
+.exam-management-skeleton {
+  padding: 20px;
+  background-color: #eef3f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+
+  &__titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+
+  &__title {
+    width: 200px;
+    height: 24px;
+  }
+
+  &__add-btn {
+    width: 100px;
+    height: 36px;
+    border-radius: 5px;
+  }
+
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  &__controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  &__filter {
+    width: 120px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  &__sort {
+    width: 150px;
+    height: 36px;
+    border-radius: 6px;
+  }
+
+  &__search {
+    width: 300px;
+    height: 40px;
+    border-radius: 10px;
+  }
+
+  &__tabs {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+
+  &__tab {
+    width: 60px;
+    height: 30px;
+    border-radius: 6px;
+  }
+
+  &__sections {
+    display: grid;
+    gap: 20px;
+  }
+
+  &__section {
+    margin-bottom: 20px;
+  }
+
+  &__section-title {
+    width: 200px;
+    height: 20px;
+    margin-bottom: 15px;
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+  }
+
+  &__card {
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    height: 300px; // شبیه ارتفاع کارت‌ها توی عکس
+  }
+
+  &__card-title {
+    width: 80%;
+    height: 24px;
+    margin-bottom: 10px;
+  }
+
+  &__card-details {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    height: 60%;
+  }
+
+  &__card-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    height: 12%;
+  }
+
+  .skeleton-box {
+    background: #e5e7eb;
+    position: relative;
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(
+        90deg,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.5) 50%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: shimmer 1.5s infinite;
+    }
+
+    &--small {
+      width: 100px;
+      height: 16px;
+      border-radius: 4px;
+    }
+
+    &--button {
+      width: 80px;
+      height: 36px;
+      border-radius: 8px;
+    }
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}

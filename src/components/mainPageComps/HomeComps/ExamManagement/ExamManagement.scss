@@ -1,0 +1,526 @@
+.exam-management {
+  padding: 20px;
+  background-color: #eef3f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  &__titleWrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+  }
+  &__title {
+    font-size: 20px;
+    color: #1f2937;
+  }
+  &__add-btn {
+    background-color: #e55604;
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: all 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__actions {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  &__controls {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    gap: 15px;
+    flex-direction: column;
+  }
+  &__filter {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  &__sort-container {
+    display: flex;
+    align-items: center;
+  }
+  &__sort {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .filter__icon,
+  .sort__icon {
+    font-size: 20px;
+    color: #04364a;
+    transition: color 0.3s;
+    margin-top: 10px;
+    &:hover {
+      color: #e55604;
+    }
+  }
+  .filter-selects {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+  .filter-select-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+  .filter-select-label {
+    font-size: 12px;
+    color: #1f2937;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .filter-select {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #ffffff;
+    border: 1px solid #d1d5db;
+    border-radius: 6px;
+    cursor: pointer;
+    outline: none;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    min-width: 120px;
+  }
+  .filter-select:hover {
+    border-color: #04364a;
+  }
+  .filter-select:focus {
+    border-color: #04364a;
+    box-shadow: 0 0 0 3px rgba(4, 54, 74, 0.1);
+  }
+  .sort-options {
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+  .sort-item {
+    padding: 6px 12px;
+    font-size: 14px;
+    color: #1f2937;
+    background-color: #f3f4f6;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    &:hover {
+      background-color: #f3f4f6;
+      border-color: #04364a;
+    }
+    &.active {
+      color: #04364a;
+      border-radius: 10px 10px 0 0;
+      border-bottom: 2px solid #e55604;
+    }
+  }
+  &__search-input {
+    width: 100%;
+    max-width: 300px;
+    padding: 0.5rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s;
+    &:focus {
+      border-color: #04364a;
+    }
+    &::placeholder {
+      color: #999;
+    }
+  }
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 0fr));
+    gap: 20px;
+    position: relative;
+  }
+  &__card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #ffffff;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    position: relative;
+    max-width: 350px;
+    height: 100%;
+    &.overlay-card {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%) scale(1.12);
+      z-index: 1001;
+      box-shadow: 0 4px 20px RGBA(0, 0, 0, 0.2);
+      max-width: 600px;
+      width: 100%;
+      cursor: pointer;
+      height: unset;
+      input,
+      select,
+      .rmdp-container {
+        width: 100%;
+        padding: 0.3rem;
+        border: 1px solid #04364a;
+        border-radius: 4px;
+        font-size: 0.9rem;
+      }
+    }
+    &.animate-in {
+      animation: slideUp 0.3s ease-out forwards;
+    }
+  }
+  &__close-btn {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    font-size: 20px;
+    color: #04364a;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: #e55604;
+    }
+  }
+  .edit-icon {
+    margin-right: 5px;
+    font-size: 14px;
+    color: #04364a;
+    cursor: pointer;
+    transition: color 0.3s;
+    &:hover {
+      color: #e55604;
+    }
+  }
+  &__time-picker {
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    gap: 5px;
+    width: 100%;
+    .react-time-picker__wrapper {
+      border: 1px solid #04364a;
+      border-radius: 4px;
+      padding: 0.3rem;
+      background-color: #ffffff;
+      direction: rtl;
+    }
+    .react-time-picker__inputGroup {
+      display: flex;
+      flex-direction: row-reverse;
+      gap: 5px;
+      font-size: 0.9rem;
+      color: #1f2937;
+    }
+    .react-time-picker__inputGroup__input {
+      background: none;
+      border: none;
+      outline: none;
+      width: 30px;
+      text-align: center;
+      color: #1f2937;
+      &:focus {
+        box-shadow: 0 0 0 2px rgba(4, 54, 74, 0.1);
+      }
+    }
+    .react-time-picker__inputGroup__divider {
+      color: #555;
+      font-size: 0.9rem;
+    }
+    .react-time-picker__button {
+      background-color: #04364a;
+      border: none;
+      border-radius: 4px;
+      padding: 0.2rem;
+      cursor: pointer;
+      transition: background-color 0.3s;
+      &:hover {
+        background-color: #041d26;
+      }
+      svg {
+        fill: #ffffff;
+        width: 14px;
+        height: 14px;
+      }
+    }
+    .react-time-picker__clock {
+      background-color: #ffffff;
+      border: 1px solid #04364a;
+      border-radius: 4px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      direction: rtl;
+      font-size: 0.9rem;
+    }
+    .react-time-picker__clock__hour,
+    .react-time-picker__clock__minute {
+      color: #1f2937;
+      &:hover {
+        background-color: #f3f4f6;
+        color: #04364a;
+      }
+    }
+    .react-time-picker__clock__hand {
+      background-color: #e55604;
+    }
+  }
+  &__time-input {
+    width: 40px;
+    padding: 0.3rem;
+    border: 1px solid #04364a;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  &__time-separator {
+    font-size: 1rem;
+    color: #555;
+  }
+  &__cost-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+  }
+  &__cost-input {
+    width: 100px;
+    padding: 0.3rem;
+    border: 1px solid #04364a;
+    border-radius: 4px;
+    font-size: 0.9rem;
+    text-align: left;
+  }
+  &__cost-unit {
+    font-size: 0.9rem;
+    color: #555;
+  }
+  &__overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+    height: 80%;
+    .exam-management__header {
+      display: flex;
+      justify-content: center;
+      padding-bottom: 5px;
+      border-bottom: 1px solid #ccc;
+      min-height: 23%;
+      align-items: center;
+      .exam-management__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        width: 50%;
+        span {
+          color: #555;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+          text-align: center;
+        }
+      }
+    }
+  }
+  .exam-management__cardTitle {
+    font-size: 18px;
+    color: #04364a;
+    text-shadow: 0px 0px 2px rgba(4, 54, 74, 0.6);
+    margin-bottom: 10px;
+    text-align: center;
+    height: 15%;
+    width: 90%;
+  }
+  &__details {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    height: 75%;
+    .exam-management__Register {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      height: 40%;
+      .exam-management__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        width: 50%;
+        span {
+          color: #555;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .Renewal {
+        width: 100%;
+        align-self: center;
+      }
+    }
+    .exam-management__holding {
+      display: flex;
+      flex-wrap: wrap;
+      border-bottom: 1px solid #ccc;
+      width: 100%;
+      height: 38%;
+      .exam-management__detail {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        font-size: 14px;
+        width: 50%;
+        span {
+          color: #555;
+          font-weight: 400;
+          display: flex;
+          align-items: center;
+        }
+      }
+      .receiveDate {
+        width: 100%;
+        align-self: center;
+      }
+    }
+    .examCost {
+      width: 100%;
+      text-align: center;
+      font-weight: 900;
+      span {
+        color: #555;
+        font-weight: 400;
+        font-size: 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+    }
+  }
+  &__button-group {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    margin-top: 10px;
+    height: 12%;
+  }
+  &__details-btn,
+  &__save-btn,
+  &__cancel-btn {
+    padding: 8px 16px;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 15px;
+    &.delete {
+      background-color: #e55604;
+      &:hover {
+        background-color: #e53c04;
+      }
+    }
+  }
+  &__details-btn,
+  &__save-btn {
+    background-color: #04364a;
+    &:hover {
+      background-color: #041d26;
+    }
+  }
+  &__cancel-btn {
+    background-color: #6b7280;
+    &:hover {
+      background-color: #4b5563;
+    }
+  }
+  .pagination {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 0;
+    list-style: none;
+    &__page {
+      display: inline-block;
+    }
+    &__link {
+      padding: 8px 12px;
+      background-color: #e5e7eb;
+      color: #1f2937;
+      border-radius: 6px;
+      font-size: 14px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background-color 0.3s, color 0.3s;
+      text-decoration: none;
+      &:hover {
+        background-color: #d1d5db;
+      }
+    }
+    &__previous,
+    &__next {
+      display: inline-block;
+    }
+    &__break {
+      display: inline-block;
+    }
+    &__active {
+      .pagination__link {
+        background-color: #04364a;
+        color: white;
+      }
+    }
+  }
+
+  .react-time-picker__inputGroup{
+    padding: 7px !important;
+  }
+}
+.react-time-picker__inputGroup__input {
+  border: none !important;
+  max-height: fit-content !important;
+}
+.react-time-picker__clock--open ,
+.react-time-picker__inputGroup__leadingZero {
+  display: none !important;
+}
+.react-time-picker__clock-button{
+  margin-right: 10px !important;
+}
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%) scale(1);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1.12);
+  }
+}

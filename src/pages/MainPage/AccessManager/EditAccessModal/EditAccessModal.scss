@@ -1,0 +1,118 @@
+.edit-access-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.edit-access-modal-content {
+  background: #fff;
+  border-radius: 8px;
+  padding: 2rem;
+  width: 90%;
+  max-width: 800px;
+  position: relative;
+  direction: rtl;
+  text-align: right;
+  font-family: "Vazir", sans-serif;
+  max-height: 80vh;
+  overflow-y: auto;
+
+  h2 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+
+  .form-group {
+    margin-bottom: 1.5rem;
+
+    label {
+      display: block;
+      font-size: 1rem;
+      color: #333;
+      margin-bottom: 0.5rem;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 0.5rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 1rem;
+    }
+  }
+
+  .permissions-table {
+    margin-bottom: 1.5rem;
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+
+      th,
+      td {
+        padding: 0.75rem;
+        border: 1px solid #ddd;
+        text-align: center;
+      }
+
+      th {
+        background: #f8f9fa;
+        font-size: 1rem;
+        color: #333;
+      }
+
+      td {
+        font-size: 0.9rem;
+        color: #444;
+      }
+
+      input[type="checkbox"] {
+        cursor: pointer;
+      }
+    }
+  }
+
+  .form-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: flex-end;
+
+    .submit-button {
+      background: #007bff;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #0056b3;
+      }
+    }
+
+    .edit-access-modal-close {
+      background: #dc3545;
+      color: #fff;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 1rem;
+      transition: background 0.2s;
+
+      &:hover {
+        background: #b02a37;
+      }
+    }
+  }
+}

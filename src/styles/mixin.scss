@@ -1,0 +1,16 @@
+@use "./varaiable.scss" as *;
+
+@mixin center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@mixin center-horizontal {
+  display: flex;
+  align-items: center;
+}
+@mixin center-vertical {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

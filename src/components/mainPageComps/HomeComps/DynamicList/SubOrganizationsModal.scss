@@ -1,0 +1,156 @@
+.sub-org-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  direction: rtl;
+}
+
+.sub-org-modal {
+  background-color: #eef3f2;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  width: 90vw; /* افزایش عرض مودال */
+  max-width: 1200px; /* حداکثر عرض */
+  max-height: 90vh; /* افزایش ارتفاع مودال */
+  overflow-y: auto;
+}
+
+.sub-org-modal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+
+  h2 {
+    font-size: 20px;
+    color: #1f2937;
+    text-align: right;
+    margin-bottom: 10px;
+  }
+}
+
+.sub-org-modal__tree {
+  height: 70vh; /* افزایش ارتفاع بخش درخت */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.sub-org-modal__node {
+  display: inline-block;
+  background-color: white;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+  padding: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  width: 180px;
+  text-align: center;
+  vertical-align: top;
+
+  &-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  &-icon {
+    font-size: 18px;
+    color: #04364a;
+  }
+
+  &-input {
+    padding: 8px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    font-size: 14px;
+    color: #1f2937;
+    width: 100%;
+    outline: none;
+    transition: border-color 0.3s;
+
+    &:focus {
+      border-color: #04364a;
+    }
+
+    &::placeholder {
+      color: #6b7280;
+    }
+  }
+
+  &-actions {
+    display: flex;
+    gap: 8px;
+  }
+
+  &-action {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 4px;
+    color: #04364a;
+    transition: color 0.3s;
+
+    &:hover {
+      color: #e55604;
+    }
+
+    &--edit {
+      color: #10b981;
+
+      &:hover {
+        color: #059669;
+      }
+    }
+
+    &--delete {
+      color: #ef4444;
+
+      &:hover {
+        color: #dc2626;
+      }
+    }
+  }
+}
+
+.sub-org-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+
+  button {
+    padding: 8px 16px;
+    border: none;
+    border-radius: 6px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+  }
+
+  .sub-org-modal-save {
+    background-color: #04364a;
+    color: white;
+
+    &:hover {
+      background-color: #e55604;
+    }
+  }
+
+  .sub-org-modal-close {
+    background-color: #e5e7eb;
+    color: #1f2937;
+
+    &:hover {
+      background-color: #d1d5db;
+    }
+  }
+}

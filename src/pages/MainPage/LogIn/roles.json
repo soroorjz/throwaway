@@ -1,0 +1,46 @@
+[
+  {
+    "type": "header",
+    "version": "5.2.1",
+    "comment": "Export to JSON plugin for PHPMyAdmin"
+  },
+  {
+    "type": "database",
+    "name": "sql_azmoon"
+  },
+  {
+    "type": "table",
+    "name": "roles",
+    "database": "sql_azmoon",
+    "data": [
+      {
+        "RoleID": "1",
+        "RoleName": "ادمین سامانه"
+      },
+      {
+        "RoleID": "2",
+        "RoleName": "سازمان اداری و استخدامی"
+      },
+      {
+        "RoleID": "3",
+        "RoleName": "دستگاه های ستادی"
+      },
+      {
+        "RoleID": "4",
+        "RoleName": "دستگاه های تابعه"
+      },
+      {
+        "RoleID": "5",
+        "RoleName": "شركت تعاوني پژوهشگران رايانگان فرديس (مجری آزمون کتبی)"
+      },
+      {
+        "RoleID": "6",
+        "RoleName": "مجری ارزیابی تکمیلی"
+      },
+      {
+        "RoleID": "7",
+        "RoleName": "غیرفعال"
+      }
+    ]
+  }
+]

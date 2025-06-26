@@ -1,0 +1,102 @@
+.stepper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 50px; /* عرض اولیه فقط برای آیکون */
+  padding: 10px;
+  height: 85%;
+  justify-content: space-between;
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    position: relative; /* برای موقعیت‌دهی برچسب */
+
+    &:hover {
+      .stepper__label {
+        opacity: 1;
+        width: 100px;
+        color: #578e7e;
+        left: -130px;
+      }
+
+      .stepper__icon {
+        background-color: #578e7e;
+        color: #ffffff;
+        
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    cursor: pointer;
+    width: 100%;
+    position: relative; /* برای موقعیت‌دهی برچسب */
+    justify-content: center;
+
+    &.active,
+    .stepper__wrapper:hover {
+      // width: auto; 
+    }
+
+    &.active {
+      .stepper__icon {
+        background-color: #578e7e; /* رنگ پس‌زمینه فقط برای فعال */
+        color: #ffffff;
+      }
+
+      .stepper__label {
+        opacity: 1;
+        width: 100px; 
+        color: #e55604; 
+        left: -130px;
+      }
+    }
+  }
+
+  &__icon {
+    background-color: #1a3c34; 
+    color: #ffffff; 
+    border-radius: 8px;
+    padding: 8px 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width:50px;
+    height:50px;
+    font-size: 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    svg {
+      font-size:22px;
+    }
+  }
+
+  &__label {
+    font-size: 16px;
+    color: #1a3c34; /* رنگ برچسب غیرفعال */
+    font-weight: 500;
+    opacity: 0; /* برچسب در حالت عادی مخفی است */
+    width: 0; /* عرض اولیه صفر برای جلوگیری از اشغال فضا */
+    overflow: hidden; /* مخفی کردن محتوا */
+    position: absolute; /* موقعیت‌دهی مطلق برای باز شدن به سمت چپ */
+    left: -120px; /* فاصله بیشتر برای جلوگیری از تداخل */
+    top: 50%;
+    transform: translateY(-50%); /* وسط‌چین عمودی */
+    transition: opacity 0.4s ease, width 0.4s ease, color 0.4s ease,
+      left 0.4s ease; /* انیمیشن نرم‌تر */
+    white-space: nowrap; /* جلوگیری از شکستن متن */
+  }
+
+  &__connector {
+    width: 2px;
+    height: 20px; /* طول خط اتصال */
+    background-color: #1a3c34; /* رنگ خط برای همه مراحل غیرفعال */
+    margin: 0 auto;
+    transition: background-color 0.3s ease;
+  }
+}

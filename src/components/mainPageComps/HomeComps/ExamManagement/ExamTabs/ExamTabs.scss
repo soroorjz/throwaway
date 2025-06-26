@@ -1,0 +1,110 @@
+.exam-management__tabs {
+  display: flex;
+  gap: 12px;
+  margin: 24px 0;
+  overflow-x: auto;
+  white-space: nowrap;
+  border-bottom: 2px solid #e0e0e0;
+  scrollbar-width: thin;
+  position: sticky;
+  top: 0px;
+  z-index: 99;
+  padding-top: 15px;
+  background-color: #eef3f2;
+}
+
+.exam-management__tabs::-webkit-scrollbar {
+  height: 6px;
+}
+
+.exam-management__tabs::-webkit-scrollbar-track {
+  background: #f5f5f5;
+  border-radius: 3px;
+}
+
+.exam-management__tabs::-webkit-scrollbar-thumb {
+  border-radius: 3px;
+}
+
+.exam-management__tab {
+  padding: 10px 20px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #333;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px 8px 0 0;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  min-width: 80px;
+  text-align: center;
+}
+
+.exam-management__tab:hover {
+  background: #e55604;
+  border-color: #b0b0b0;
+  color: #fff;
+  transform: translateY(-2px);
+}
+
+.exam-management__tab--active {
+  // background: #04364a;
+  // color: #fff;
+  //   border-color: #007bff;
+  border-bottom: 3px solid #e55604;
+  box-shadow: 0 2px 4px rgba(0, 123, 255, 0.2);
+  transform: translateY(-2px);
+}
+
+.exam-management__sections {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  margin-top: 24px;
+}
+
+.exam-management__section {
+  scroll-margin-top: 80px;
+  padding: 16px 0;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.exam-management__section-title {
+  color: #04364a;
+  margin-bottom: 24px;
+  padding: 0 16px;
+  position: relative;
+    // text-align: center;
+  font-size: 24px;
+  font-weight: 500;
+
+}
+
+@media (max-width: 768px) {
+  .exam-management__tabs {
+    gap: 8px;
+  }
+
+  .exam-management__tab {
+    padding: 8px 16px;
+    font-size: 1rem;
+    min-width: 60px;
+  }
+}
+
+@media (max-width: 480px) {
+  .exam-management__tabs {
+    margin: 16px 0;
+  }
+
+  .exam-management__tab {
+    padding: 6px 12px;
+    font-size: 0.9rem;
+  }
+
+  .exam-management__section {
+    scroll-margin-top: 60px;
+  }
+}

@@ -1,0 +1,29 @@
+.executive-tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 5px;
+
+  &__tab {
+    padding: 8px 16px;
+    background-color: #e5e7eb;
+    color: #6b7280;
+    border: none;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+    white-space: nowrap;
+    &:hover {
+      background-color: #d1d5db;
+    }
+
+    &--active {
+      background-color: #ffffff;
+      color: #1f2937;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+  }
+}
