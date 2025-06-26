@@ -8,14 +8,14 @@ import AddExamModal from "./AddExamModal/AddExamModal";
 import { FaPlus } from "react-icons/fa";
 import { useAuth } from "../../../../AuthContext";
 import { persianToLatinDigits } from "../../../../utils/persianToLatinDigits";
-import { getHandler } from "../../../../apiService";
-
-
+import { addHandler, deleteHandler, getHandler } from "../../../../apiService";
 
 const ExamManagement = () => {
-  let apiExam = getHandler("exam");
+  const [exams, setExams] = useState([]);
+  getHandler("exam").then((res) => {
+    setExams(res);
+  });
   const { user } = useAuth();
-  const [exams, setExams] = useState(apiExam);
   const [originalExams, setOriginalExams] = useState(null);
   const [selectedExamId, setSelectedExamId] = useState(null);
   const [editingField, setEditingField] = useState(null);
@@ -182,18 +182,15 @@ const ExamManagement = () => {
     setOriginalExams(null);
   };
 
-  const handleDeleteExam = (id) => {
+  const handleDeleteExam = async (id) => {
     const confirmDelete = window.confirm(
       "آیا مطمئن هستید که می‌خواهید این آزمون را حذف کنید؟"
     );
     if (!confirmDelete) return;
-
-    const updatedExams = exams.filter((exam) => exam.id !== id);
-    setExams(updatedExams);
-    console.log("Exam deleted, updatedExams:", updatedExams);
+    await deleteHandler("exam", id);
   };
 
-  const handleAddExam = (newExam) => {
+  const handleAddExam = async (newExam) => {
     const newId = exams.length
       ? Math.max(...exams.map((exam) => exam.examId)) + 1
       : 1;
@@ -202,9 +199,7 @@ const ExamManagement = () => {
       status: 1,
       ...newExam,
     };
-    const updatedExams = [examToAdd, ...exams];
-    console.log("updatedExams:", updatedExams);
-    setExams(updatedExams);
+    await addHandler("exam", examToAdd);
     setIsAddModalOpen(false);
     setFilters({ organizer: "", status: "", sort: "" });
     setSearchTerm("");

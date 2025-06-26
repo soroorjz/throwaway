@@ -4,7 +4,7 @@ module.exports = function (app) {
   app.use(
     "/api",
     createProxyMiddleware({
-      target: "https://smp.devrayan.ir",
+      target: "https://api.devrayan.ir/api/",
       changeOrigin: true,
       secure: false, // SSL
     })
