@@ -15,6 +15,7 @@ const ExamManagement = () => {
   getHandler("exam").then((res) => {
     setExams(res);
   });
+  
   const { user } = useAuth();
   const [originalExams, setOriginalExams] = useState(null);
   const [selectedExamId, setSelectedExamId] = useState(null);
